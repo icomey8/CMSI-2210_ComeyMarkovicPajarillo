@@ -14,6 +14,6 @@ start:   mov         rax, 0x02000004         ; system call for write [Linux shou
 
                      
                      
-message: db          10, 10, 9, "Hello, World", 10, 10
+message: db          "Hello, World", 10
                     
 
