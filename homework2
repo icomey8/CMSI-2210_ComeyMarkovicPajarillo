@@ -1,0 +1,19 @@
+1. What is a computer system?
+    A computer system, to me, is the intricate organization of hardware and software processes and how they interact.  Like we discussed in class, it can be visualized as a set of layers, where each layer builds off of what the layer below it does.
+
+2. What are some of the parts of a computer system?
+    A computer system has a lot of parts; its hardware is made up of the CPU, the motherboard, the hard drive, and circuits and chips.  On the software side, there is the operating system, embedded software, and more.
+
+3. What is the difference between a compiled language and an interpreted language?
+    The main difference is that an interpreted language uses another program to interpret code, while with a compiled language, the machine does it directly.
+    (https://www.freecodecamp.org/news/compiled-versus-interpreted-languages/)
+
+4. Is C a compiled language?
+    C is a compiled language because it uses a compiler to translate code into assembly code, which is then translated once more to machine code before it is executed. 
+
+5. Who invented the C language?
+    C was invented by computer scientist Dennis Ritchie in the 1970s as a successor to its previous iteration, B.
+    (https://en.wikipedia.org/wiki/C_(programming_language))
+
+6. How long has C been in use?
+    C has been in use since the 1970s and especially gained popularity during the 1980s.”
