@@ -66,7 +66,6 @@ def alphabet_to_morse(input):
     for letter in input:
         print(morse_alphabet[letter.upper()])
 
-# WRONG:  ANNUAL INTEREST RATE, SO NEED A 12TH OF 6% WHICH IS 0.005
 def interest_rate(initial_balance, interest_rate):
     balances = []
     balances.append(initial_balance)
