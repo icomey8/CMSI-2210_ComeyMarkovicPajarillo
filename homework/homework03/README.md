@@ -157,32 +157,45 @@ _______________+1
 
 17. If we had 20-bit registers, the smallest signed decimal integer value would be:
 ```
-
+= -1 * (2^18 + 2^17 + 2^16 + 2^15 + 2^14 + 2^13 + 2^12 + 2^11 + 2^10 + 2^9 + 2^8 + 2^7 + 2^6 + 2^5 + 2^4 + 2^3 + 2^2 + 2^1 + 2^0)
+= -524287
 ```
 
 18. If we had 20-bit registers, the largest signed decimal integer value would be:
 ```
+= 1 * (2^18 + 2^17 + 2^16 + 2^15 + 2^14 + 2^13 + 2^12 + 2^11 + 2^10 + 2^9 + 2^8 + 2^7 + 2^6 + 2^5 + 2^4 + 2^3 + 2^2 + 2^1 + 2^0)
+= 524287
 
 ```
 
 19. The modular sum of 16-bit hex values 3511 + 4FFC is:
 ```
-
+   1 1
+    3 5 1 1
+  - 4 F F C
+   _________
+    8 5 0 D
+= 850D
 ```
 
 20. The saturated sum of 16-bit hex values 3511 + 4FFC is:
 ```
-
+   1 1
+    3 5 1 1
+  - 4 F F C
+   _________
+    8 5 0 D
+= 850D
 ```
 
 21. The 16-bit operation 0x3511 + 0x4FFC has a carry (Y or N):
 ```
-
+Y
 ```
 
 22. The 16-bit operation 0x3511 + 0x4FFC has a overflows (Y or N):
 ```
-
+N
 ```
 
 
