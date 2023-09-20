@@ -1,17 +1,17 @@
 ## C-Level Problems:
 
 1. Hex FAC3 in binary is:
-```
+---
 = (1111) + (1010) + (1100) + (0011)
-   = 1111 1010 1100 0011
-```
+= 1111 1010 1100 0011
+
 
 3. Hex FAC3 as an unsigned decimal is:
-```
+
 = 15(16^3) +  10(16^2) + 12(16^1) + 3(16^0)
 = 61440 + 2560 + 192 + 3
 = 64195
-```
+
  
 5. Hex FAC3 as a signed decimal is:
     = FFFF - FAC3
