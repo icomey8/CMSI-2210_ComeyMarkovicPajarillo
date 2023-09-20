@@ -409,15 +409,29 @@ F: 00000000000000000000000
 
 4. The smallest nonezero positive IEEE-754 single precision float, in hex is:
 ```
-According to University of Illinois, it is 1.2 * 10^-38.
+S: 0 (positive)
+E: 00000001 (max bits)
+F: 00000000000000000000000
 
-https://courses.physics.illinois.edu/cs357/sp2020/notes/ref-4-fp.html#:~:text=IEEE%2D754%20Single%20precision%20(32%20bits)%3A&text=Smallest%20positive%20subnormal%20FP%20number,%E2%89%881.4%C3%9710%E2%88%9245
+0000 0000 1000 0000 0000 0000 0000 0000
+
+0x00800000
 
 ```
 
-5. -5.125 X 290 as a 32-bit float, in hex is:
+5. -5.125 X 2^90 as a 32-bit float, in hex is:
 ```
-= 0xc0a40000
+= -5.125 * 2^(90)
+S: 1 (negative)
+E: 90 - 127 = -37
+   -37 = 100101 =  00100101       -> 	  11011010
+                                     		+1
+	  			      ____________
+	 			    	1101 1011
+F: 5.125 -> 5.125 - 5.0 = .125 -> 1111101
+= S + E + F = 1 + 1101 1011 + 1111101
+= 1110 1101 1111 1101 0000 0000 0000 0000 
+= 0xEDFD
 
 ```
 
