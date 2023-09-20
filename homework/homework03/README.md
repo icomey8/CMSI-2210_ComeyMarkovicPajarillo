@@ -50,31 +50,74 @@
 
 8. Hex 8000 as an unsigned decimal is:
 ```
-
+(8*16^3) + (0*16^2) + (0*16^1) + (0*16^0) = 
+32768 + 0 + 0 + 0 = 
+32768
 ```
 
 9. Hex 8000 as a signed decimal is:
 ```
-
+Hex 8000 to binary = 1000000000000000
+Most Significant Bit = 1
+-32768
 ```
 
 10. Decimal 8000 encoded in 16-bits (unsigned) is in hex:
 ```
+	8000
+	/   \
+    500	     0
+    /   \
+  31     4
+ /  \
+1    15
 
+0x1F40
 ```
 
 11. Decimal 8000 encoded in 16-bits (signed) is in hex:
 ```
+8000 = 0x1F40 = 0001 1111 0100 0000
 
+1110 0000 1011 1111
+________________+1
+1110 0000 1100 0000
+
+8000 = 0xE0C0
 ```
 
 12. Decimal -11 encoded in 16-bits (signed) is in hex:
 ```
+	11
+      /    \
+     0     11
 
+11 = 0x0B = 0000 0000 0000 1011
+
+1111 1111 1111 0100
+_______________+1
+1111 1111 1111 0101
+
+-11 = 0xFFF5 
 ```
 
 13. Decimal -32717 encoded in 16-bits (signed) is in hex:
 ```
+			32717
+                       /    \
+	            2044     13
+         	   /    \
+                 127     12
+                /   \
+               7     15
+
+32717 = 0x7FCD = 0111 1111 1100 1101
+			   
+1000 0000 0011 0010
+_______________+1
+1000 0000 0011 0011
+
+-32717 = 0x8033
 
 ```
 
@@ -128,32 +171,61 @@
 
 1. The modular sum of 16-bit hex values 6159 + F702 is:
 ```
-
+6159 = 0110 0001 0101 1001
+F702 = 1111 0111 0000 0010
+     	 ________________+
+    0001 0101 1000 0101 1011
+ignore the carry
+6159 + F702 = 0x585B
 ```
 
 2. The saturated sum of 16-bit hex values 6159 + F702 is:
 ```
+6159 + F702 = 0x1585B = 88155 
+overflow 
+the maximum representable value is 65536
 
+                          65536
+			/        \ 
+		       4096     0
+		     /     \
+		    256    0
+		   /   \
+	          16    0
+	          / \
+	         1    0
+	
+65536 = 0x10000
 ```
 
 3. The 16-bit operation 0x6159 + 0xF702 has a carry (Y or N):
 ```
+Yes, because the hex value 1 carries over 1 extra hex digit
 
 ```
 
 4. The 16-bit operation 0x6159 + 0xF702 has a overflows (Y or N):
 ```
+Yes, because the value passes the 16-bit decimal limit
 
 ```
 
 5. The modular sum of 16-bit hex values EEEE + C00C is:
 ```
-
+EEEE = 1110 1110 1110 1110
+C00C = 1100 0000 1100 0000
+	________________+
+       0010 1010 1111 1010 1110
+ignore the carry
+EEEE + C00C = 0xAFC0
 ```
 
 6. The saturated sum of 16-bit hex values EEEE + C00C is:
 ```
-
+EEEE + C00C = 0xAFC0 = 110330
+overflow 
+the maximum representable value is 65536
+65536 = 0x10000
 ```
 
 7. The 16-bit operation 9EEE + AB0C has a carry (Y or N):
@@ -234,18 +306,35 @@ ________________________
 
 1. The largest finite IEEE-754 single precision float, in hex is:
 ```
+S: 0 (positive)
+E: 11111111 (max bits)
+F: 00000000000000000000000
 
+0111 1111 1000 0000 0000 0000 0000 0000
+
+0x7F800000
 ```
 
 2. The smallest finite IEEE-754 single precision float, in hex is:
 ```
+S: 0 (positive)
+E: 00000001 (max bits)
+F: 00000000000000000000000
 
+0000 0000 1000 0000 0000 0000 0000 0000
+
+0x00800000
 ```
 
 3. The largest nonzero negative IEEE-754 single precision float, in hex is:
 ```
+S: 1 (negative)
+E: 11111111 (max bits)
+F: 00000000000000000000000
 
+1111 1111 1000 0000 0000 0000 0000 0000
 
+0xFF800000
 ```
 
 4. The smallest nonezero positive IEEE-754 single precision float, in hex is:
