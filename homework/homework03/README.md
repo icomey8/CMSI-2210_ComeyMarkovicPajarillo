@@ -50,77 +50,152 @@
 
 8. Hex 8000 as an unsigned decimal is:
 ```
-
+(8*16^3) + (0*16^2) + (0*16^1) + (0*16^0) = 
+32768 + 0 + 0 + 0 = 
+32768
 ```
 
 9. Hex 8000 as a signed decimal is:
 ```
-
+Hex 8000 to binary = 1000000000000000
+Most Significant Bit = 1
+-32768
 ```
 
 10. Decimal 8000 encoded in 16-bits (unsigned) is in hex:
 ```
+	8000
+	/   \
+    500	     0
+    /   \
+  31     4
+ /  \
+1    15
 
+0x1F40
 ```
 
 11. Decimal 8000 encoded in 16-bits (signed) is in hex:
 ```
+8000 = 0x1F40 = 0001 1111 0100 0000
 
+1110 0000 1011 1111
+________________+1
+1110 0000 1100 0000
+
+8000 = 0xE0C0
 ```
 
 12. Decimal -11 encoded in 16-bits (signed) is in hex:
 ```
+	11
+      /    \
+     0     11
 
+11 = 0x0B = 0000 0000 0000 1011
+
+1111 1111 1111 0100
+_______________+1
+1111 1111 1111 0101
+
+= 0xFFF5 
 ```
 
 13. Decimal -32717 encoded in 16-bits (signed) is in hex:
 ```
+			32717
+                       /    \
+	            2044     13
+         	   /    \
+                 127     12
+                /   \
+               7     15
+
+32717 = 0x7FCD = 0111 1111 1100 1101
+			   
+1000 0000 0011 0010
+_______________+1
+1000 0000 0011 0011
+
+= 0x8033
 
 ```
 
 14. Binary 10111101 in hex is:
 ```
+= 2^7 + 2^5 + 2^4 + 2^3 + 2^2 + 2^0
+= 128 + 32 + 16 + 8 + 4 + 1
+= 189
+	189
+       /    \
+      11     13
+= 0xBD
 
 ```
 
 15. Binary 1011110100000001 as an unsigned decimal is:
 ```
+= 2^15 + 2^13 + 2^12 + 2^11 + 2^10 + 2^8 + 2^0
+= 32768 + 8192 + 4096 + 2048 + 1024 + 256 + 1
+= 48385
 
 ```
 
 16. Binary 1011110100000001 as a signed decimal is:
 ```
+= 1011 1101 0000 0001
+= BD01
+= FFFF - BD01
+= 42FE + 1
+= 42FF
+= 4(16^3) + 2(16^2) + 15(16^1) + 15(16^0)
+= 16384 + 512 + 2140 + 15
+= 17151 * -1
+= -17151
 
 ```
 
 17. If we had 20-bit registers, the smallest signed decimal integer value would be:
 ```
-
+= -1 * (2^18 + 2^17 + 2^16 + 2^15 + 2^14 + 2^13 + 2^12 + 2^11 + 2^10 + 2^9 + 2^8 + 2^7 + 2^6 + 2^5 + 2^4 + 2^3 + 2^2 + 2^1 + 2^0)
+= -524287
 ```
 
 18. If we had 20-bit registers, the largest signed decimal integer value would be:
 ```
+= 1 * (2^18 + 2^17 + 2^16 + 2^15 + 2^14 + 2^13 + 2^12 + 2^11 + 2^10 + 2^9 + 2^8 + 2^7 + 2^6 + 2^5 + 2^4 + 2^3 + 2^2 + 2^1 + 2^0)
+= 524287
 
 ```
 
 19. The modular sum of 16-bit hex values 3511 + 4FFC is:
 ```
-
+   1 1
+    3 5 1 1
+  - 4 F F C
+   _________
+    8 5 0 D
+= 850D
 ```
 
 20. The saturated sum of 16-bit hex values 3511 + 4FFC is:
 ```
-
+   1 1
+    3 5 1 1
+  - 4 F F C
+   _________
+    8 5 0 D
+= 850D
 ```
 
 21. The 16-bit operation 0x3511 + 0x4FFC has a carry (Y or N):
 ```
-
+Y
 ```
 
 22. The 16-bit operation 0x3511 + 0x4FFC has a overflows (Y or N):
 ```
-
+N
 ```
 
 
@@ -128,32 +203,61 @@
 
 1. The modular sum of 16-bit hex values 6159 + F702 is:
 ```
-
+6159 = 0110 0001 0101 1001
+F702 = 1111 0111 0000 0010
+     	 ________________+
+    0001 0101 1000 0101 1011
+ignore the carry
+6159 + F702 = 0x585B
 ```
 
 2. The saturated sum of 16-bit hex values 6159 + F702 is:
 ```
+6159 + F702 = 0x1585B = 88155 
+overflow 
+the maximum representable value is 65536
 
+                          65536
+			/        \ 
+		       4096     0
+		     /     \
+		    256    0
+		   /   \
+	          16    0
+	          / \
+	         1    0
+	
+65536 = 0x10000
 ```
 
 3. The 16-bit operation 0x6159 + 0xF702 has a carry (Y or N):
 ```
+Yes, because the hex value 1 carries over 1 extra hex digit
 
 ```
 
 4. The 16-bit operation 0x6159 + 0xF702 has a overflows (Y or N):
 ```
+Yes, because the value passes the 16-bit decimal limit
 
 ```
 
 5. The modular sum of 16-bit hex values EEEE + C00C is:
 ```
-
+EEEE = 1110 1110 1110 1110
+C00C = 1100 0000 1100 0000
+	________________+
+       0010 1010 1111 1010 1110
+ignore the carry
+EEEE + C00C = 0xAFC0
 ```
 
 6. The saturated sum of 16-bit hex values EEEE + C00C is:
 ```
-
+EEEE + C00C = 0xAFC0 = 110330
+overflow 
+the maximum representable value is 65536
+65536 = 0x10000
 ```
 
 7. The 16-bit operation 9EEE + AB0C has a carry (Y or N):
@@ -206,26 +310,64 @@ ________________________
 
 12. The negation of 32-bit word 0xFFF329BA is:
 ```
+= FFF329BA
+= 1111 1111 1111 0011 0010 1001 1011 1010
+= 0000 0000 0000 1100 1101 0110 0100 0101
+                                      + 1
+__________________________________________
+= 0000 0000 0000 1100 1101 0110 0100 0110
 
 ```
 
 13. 96.03125 as a 32-bit float, in hex is:
 ```
+      96                    0.3125
+    /    \                  /    \
+    6     0                0.5    0
+                          /    \
+                          0     8
+= 60.080
+= 0x60.08
 
 ```
 
 14. -16777216 as a 32-bit float, in hex is:
 ```
-
+                        16777216
+                         /    \
+                   1048576     0
+                   /    \
+               65536     0
+              /    \
+           4096     0
+          /    \
+        256     0
+      /    \
+     16     0
+   /    \
+  1     0
+= 0x-1000000
 ```
 
 15. Hex 43700000, when interpreted as an IEEE-754 pattern, is in decimal:
 ```
+= 0100 0011 0111 0000 0000 0000 0000 0000
+S: 0 (positive)
+E: 1000 0110 -> 134 - 127 = 7
+F: 11100000000000000000000 -> 1.111
+= 1.111 * 2^7
+= 142.208
 
 ```
 
 16. Hex C0FF0000, when interpreted as an IEEE-754 pattern, is in decimal:
 ```
+= 1100 0000 1111 1111 0000 0000 0000 0000
+S: 1 (negative)
+E: 1000 0001 -> 129 - 127 = 2
+F: 11111110000000000000000 -> 1.1111111
+= 1.1111111 * 2^2
+= 4.4444444
 
 ```
 
@@ -234,41 +376,94 @@ ________________________
 
 1. The largest finite IEEE-754 single precision float, in hex is:
 ```
+S: 0 (positive)
+E: 11111111 (max bits)
+F: 00000000000000000000000
 
+0111 1111 1000 0000 0000 0000 0000 0000
+
+0x7F800000
 ```
 
 2. The smallest finite IEEE-754 single precision float, in hex is:
 ```
+S: 0 (positive)
+E: 00000001 (max bits)
+F: 00000000000000000000000
 
+0000 0000 1000 0000 0000 0000 0000 0000
+
+0x00800000
 ```
 
 3. The largest nonzero negative IEEE-754 single precision float, in hex is:
 ```
+S: 1 (negative)
+E: 11111111 (max bits)
+F: 00000000000000000000000
 
+1111 1111 1000 0000 0000 0000 0000 0000
 
+0xFF800000
 ```
 
 4. The smallest nonezero positive IEEE-754 single precision float, in hex is:
 ```
-According to University of Illinois, it is 1.2 * 10^-38.
+S: 0 (positive)
+E: 00000001 (max bits)
+F: 00000000000000000000000
 
-https://courses.physics.illinois.edu/cs357/sp2020/notes/ref-4-fp.html#:~:text=IEEE%2D754%20Single%20precision%20(32%20bits)%3A&text=Smallest%20positive%20subnormal%20FP%20number,%E2%89%881.4%C3%9710%E2%88%9245
+0000 0000 1000 0000 0000 0000 0000 0000
 
-```
-
-5. -5.125 X 290 as a 32-bit float, in hex is:
-```
-= 0xc0a40000
+0x00800000
 
 ```
 
-6. 2-138 as a 32-bit float, in hex is:
+5. -5.125 X 2^90 as a 32-bit float, in hex is:
 ```
+= -5.125 * 2^(90)
+S: 1 (negative)
+E: 90 - 127 = -37
+   -37 = 100101 =  00100101       -> 	  11011010
+                                     		+1
+	  			      ____________
+	 			    	1101 1011
+F: 5.125 -> 5.125 - 5.0 = .125 -> 1111101
+= S + E + F = 1 + 1101 1011 + 1111101
+= 1110 1101 1111 1101 0000 0000 0000 0000 
+= 0xEDFD
 
 ```
 
-7. 1.5 X 2-143 as a 32-bit float, in hex is:
+6. 2^(-138) as a 32-bit float, in hex is:
 ```
+= 1.0 * 2^(-138)
+S: 0 (positive)
+E: -138 + 127 = -11
+   -11 = 1011 = 0000 1011 -> 1111 0100
+                                     +1
+                            ____________
+                             1111 0101
+F: 1.0 -> 1 + 1.0 = 0.0 -> 0
+= S + E + F = 0 + 1111 0101 + 0
+= 0111 1010 1000 0000 0000 0000 0000 0000
+= 0x7A8
+
+```
+
+7. 1.5 X 2^(-143) as a 32-bit float, in hex is:
+```
+= 1.5 * 2^(-142)
+S: 0 (positive)
+E: -143 + 127 = -16
+   -16 = 10000 = 0001 0000 -> 1110 1111
+                                     +1
+                            ____________
+                             1111 0000
+F: 1.5 -> 1.5 - 1.0 = 0.5 -> 101
+= S + E + F = 0 + 1111 0000 + 101
+= 0111 1000 0101 0000 0000 0000 0000 0000
+= 0x785
 
 ```
 
