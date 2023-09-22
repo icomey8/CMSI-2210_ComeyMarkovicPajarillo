@@ -8,7 +8,7 @@ int main(int arg, char *argv[])
     char input[25];
     int value;
     int length = 0;
-    int sum;
+    int sum = 0;
     int torf = 1;
     int average;
     char numStr[250];
