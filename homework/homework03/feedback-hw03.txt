@@ -1,0 +1,138 @@
+
+
+Evaluation Criteria ~ homework03
+CMSI 2210 Section 02 Fall 2023
+=================================
+CONVERSIONS
+
+Problems "C-level"
+=================
+   Question 01      1/1 pt.
+   Question 02      1/1 pt.
+   Question 03      1/1 pt.
+   Question 04      1/1 pt.
+   Question 05      1/1 pt.
+   Question 06      0/1 pt.   nope!
+   Question 07      1/1 pt.
+   Question 08      1/1 pt.
+   Question 09      1/1 pt.
+   Question 10      1/1 pt.
+   Question 11      0/1 pt.   nope!
+   Question 12      1/1 pt.
+   Question 13      1/1 pt.
+   Question 14      1/1 pt.
+   Question 15      1/1 pt.
+   Question 16      1/1 pt.
+   Question 17      0/1 pt.   nope!
+   Question 18      1/1 pt.
+   Question 19      1/1 pt.
+   Question 20      1/1 pt.
+   Question 21      0/1 pt.   nope!
+   Question 22      0/1 pt.   nope!
+
+
+Problems "B-level"
+=================
+[renumber so only the actual questions are numbered]
+   Question  01     1/1 pt.
+   Question  02     0/1 pt.   nope!
+   Question  03     1/1 pt.
+   Question  04     0/1 pt.   nope!
+   Question  05     0/1 pt.   nope!
+   Question  06     0/1 pt.   nope!
+   Question  07     1/1 pt.
+   Question  08     1/1 pt.
+   Question  09     1/1 pt.
+   Question  10     1/1 pt.
+   Question  11     1/1 pt.
+   Question  12     1/1 pt.
+   Question  13     1/1 pt.
+   Question  14     1/1 pt.
+   Question  15     0/1 pt.   nope!
+   Question  16     0/1 pt.   nope!
+
+
+Problems "A-level"
+=================
+[renumber so only the actual questions are numbered]
+   Question  01     0/1 pt.   nope!
+   Question  02     0/1 pt.   nope!
+   Question  03     0/1 pt.   nope!
+   Question  04     0/1 pt.   nope!
+   Question  05     0/1 pt.   nope!
+   Question  06     0/1 pt.   nope!
+   Question  07     0/1 pt.   nope!
+   Question  08   for fun only!
+
+Total possible points 45
+
+========================================================
+TOTAL EARNED POINTS:
+   You earned 17/22 for the "C-level"
+   you earned 10/16 for the "B-level"
+   You earned  0/ 7 for the "A-level"
+
+========================================================
+SPECIFIC COMMENTS/FEEDBACK:
+
+on "C-level" #6, how can the same bit pattern represent two different values?
+it's a bit nonsensical.
+
+on "C-level" #11, remember it's 8000 decimal which is still positive, even if
+it's a signed value.  No two's complement needed.
+
+on "C-level" #17, remember that the smallest negative value will be EVEN.
+
+on "C-level" #21 and #22, revisit the definition of 'carry' and 'overflow'.
+
+on "B-level" #2, remember that if there is a carry in saturated addition,
+the value has 'pegged the meter'.
+
+on "B-level" #4, the two numbers have different signs so you CAN'T have an
+overflow.
+
+on "B-level" #5, check your math
+
+On "B-level" #6, the maximum representable value is NOT '65536' but '65535'
+which is when all 16 bits are set to a '1'.  Remember '65536' requires 17
+bits!
+
+on "B-level" #13, hexadecimal doesn't have a float, but the problem wasn't
+specific enough.  I see what you did.  Likewise for #14, there's no minus
+sign in hexadecimal since we use the most significant bit of the most
+significant digit to indicate sign.
+
+on "B-level" #15 and #16, pretty close, but 1.111x2^7 is not 142.208.  There
+is no such binary fraction as "0.208".  Try converting it as:
+   1.111 x 2^7 = 11110000.0
+then calculate the decimal.  Same for #16.
+
+on "A-level" #1, the problem is asking for the largest value that can be
+represented in 32-bit IEEE-754 form.  You need more 'one' bits.
+
+on "A-level" #2, the problem is asking for the smallest value, so there
+must be a '1' in the mantissa field somewhere.
+
+on "A-level" #3, the problem is asking for the largest negative number that
+is just BELOW zero.
+
+on "A-level" #4, the problem is asking for the smallest positive number that
+is just ABOVE zero.
+
+on "A-level" #5, you don't have enough digits in your answer; try calculating
+2^90 as a decimal number, then multiply by -5.125, then put that result into
+the converter on the web page at:
+      https://www.h-schmidt.net/FloatConverter/IEEE754.html
+
+on "A-level" #6 and #7, do the same as on #5.
+
+========================================================
+FIRST PASS OUTCOME:
+
+Currently, because you didn't get all correct in any section you have a fail
+for the assignment.
+
+Make your corrections and re-submit to your repo by Thursday, September 28th.
+You'll get full credit for the highest section's value that has 100% correct
+answers.
+
