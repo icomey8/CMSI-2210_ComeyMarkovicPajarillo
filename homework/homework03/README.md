@@ -374,7 +374,7 @@ F: 11111110000000000000000 -> 1.1111111
 
 ## A-Level Problems
 
-1. The largest finite IEEE-754 single precision float, in hex is:
+2. The largest finite IEEE-754 single precision float, in hex is:
 ```
 S: 0 (positive)
 E: 11111111 (max bits)
@@ -385,7 +385,7 @@ F: 00000000000000000000000
 0x7F800000
 ```
 
-2. The smallest finite IEEE-754 single precision float, in hex is:
+3. The smallest finite IEEE-754 single precision float, in hex is:
 ```
 S: 0 (positive)
 E: 00000001 (max bits)
@@ -396,7 +396,7 @@ F: 00000000000000000000000
 0x00800000
 ```
 
-3. The largest nonzero negative IEEE-754 single precision float, in hex is:
+4. The largest nonzero negative IEEE-754 single precision float, in hex is:
 ```
 S: 1 (negative)
 E: 11111111 (max bits)
@@ -407,7 +407,7 @@ F: 00000000000000000000000
 0xFF800000
 ```
 
-4. The smallest nonezero positive IEEE-754 single precision float, in hex is:
+5. The smallest nonezero positive IEEE-754 single precision float, in hex is:
 ```
 S: 0 (positive)
 E: 00000001 (max bits)
@@ -419,7 +419,7 @@ F: 00000000000000000000000
 
 ```
 
-5. -5.125 X 2^90 as a 32-bit float, in hex is:
+6. -5.125 X 2^90 as a 32-bit float, in hex is:
 ```
 = -5.125 * 2^(90)
 S: 1 (negative)
@@ -435,7 +435,7 @@ F: 5.125 -> 5.125 - 5.0 = .125 -> 1111101
 
 ```
 
-6. 2^(-138) as a 32-bit float, in hex is:
+7. 2^(-138) as a 32-bit float, in hex is:
 ```
 = 1.0 * 2^(-138)
 S: 0 (positive)
@@ -451,7 +451,7 @@ F: 1.0 -> 1 + 1.0 = 0.0 -> 0
 
 ```
 
-7. 1.5 X 2^(-143) as a 32-bit float, in hex is:
+8. 1.5 X 2^(-143) as a 32-bit float, in hex is:
 ```
 = 1.5 * 2^(-142)
 S: 0 (positive)
