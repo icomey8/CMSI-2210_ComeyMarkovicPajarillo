@@ -38,8 +38,9 @@
 
 6. Hex 0064 as a signed decimal is:
 ```
-= 100 * -1
-= -100
+= 0(16^3) + 0(16^2) + 6(16^1) + 4(16^0)
+= 0 + 0 + 96 + 4
+= 100
 ```
 
 7. Hex 8000 in binary is:
@@ -77,13 +78,8 @@ Most Significant Bit = 1
 
 11. Decimal 8000 encoded in 16-bits (signed) is in hex:
 ```
-8000 = 0x1F40 = 0001 1111 0100 0000
-
-1110 0000 1011 1111
-________________+1
-1110 0000 1100 0000
-
-8000 = 0xE0C0
+8000 = 0x1F40
+Same as unsigned.
 ```
 
 12. Decimal -11 encoded in 16-bits (signed) is in hex:
@@ -157,8 +153,8 @@ _______________+1
 
 17. If we had 20-bit registers, the smallest signed decimal integer value would be:
 ```
-= -1 * (2^18 + 2^17 + 2^16 + 2^15 + 2^14 + 2^13 + 2^12 + 2^11 + 2^10 + 2^9 + 2^8 + 2^7 + 2^6 + 2^5 + 2^4 + 2^3 + 2^2 + 2^1 + 2^0)
-= -524287
+= -1 * (2^18 + 2^17 + 2^16 + 2^15 + 2^14 + 2^13 + 2^12 + 2^11 + 2^10 + 2^9 + 2^8 + 2^7 + 2^6 + 2^5 + 2^4 + 2^3 + 2^2 + 2^1 + 0)
+= -524286
 ```
 
 18. If we had 20-bit registers, the largest signed decimal integer value would be:
@@ -190,18 +186,19 @@ _______________+1
 
 21. The 16-bit operation 0x3511 + 0x4FFC has a carry (Y or N):
 ```
-Y
+N
+
 ```
 
 22. The 16-bit operation 0x3511 + 0x4FFC has a overflows (Y or N):
 ```
-N
+Y
 ```
 
 
 ## B-Level Problems
 
-1. The modular sum of 16-bit hex values 6159 + F702 is:
+2. The modular sum of 16-bit hex values 6159 + F702 is:
 ```
 6159 = 0110 0001 0101 1001
 F702 = 1111 0111 0000 0010
@@ -211,56 +208,55 @@ ignore the carry
 6159 + F702 = 0x585B
 ```
 
-2. The saturated sum of 16-bit hex values 6159 + F702 is:
+3. The saturated sum of 16-bit hex values 6159 + F702 is:
 ```
 6159 + F702 = 0x1585B = 88155 
 overflow 
-the maximum representable value is 65536
+the maximum representable value is 65535
 
-                          65536
-			/        \ 
-		       4096     0
-		     /     \
-		    256    0
-		   /   \
-	          16    0
-	          / \
-	         1    0
+                 65535
+		        /    \ 
+		     4095     15
+		    /    \
+		  255     15
+		 /    \
+	    15     15
 	
-65536 = 0x10000
+65535 = 0xFFFF
 ```
 
-3. The 16-bit operation 0x6159 + 0xF702 has a carry (Y or N):
+4. The 16-bit operation 0x6159 + 0xF702 has a carry (Y or N):
 ```
 Yes, because the hex value 1 carries over 1 extra hex digit
 
 ```
 
-4. The 16-bit operation 0x6159 + 0xF702 has a overflows (Y or N):
+5. The 16-bit operation 0x6159 + 0xF702 has a overflows (Y or N):
 ```
-Yes, because the value passes the 16-bit decimal limit
+No, answer is in hex and decimal.
+ becuase 0x6159 is positive as a signed decimal and 0xF702 is negatiive as a signed integer.
 
 ```
 
-5. The modular sum of 16-bit hex values EEEE + C00C is:
+6. The modular sum of 16-bit hex values EEEE + C00C is:
 ```
 EEEE = 1110 1110 1110 1110
-C00C = 1100 0000 1100 0000
-	________________+
-       0010 1010 1111 1010 1110
+C00C = 1100 0000 1100 1100
+	       ________________+
+       1010 1111 1011 1010
+
 ignore the carry
-EEEE + C00C = 0xAFC0
+EEEE + C00C = 0xAFBA
 ```
 
-6. The saturated sum of 16-bit hex values EEEE + C00C is:
+7. The saturated sum of 16-bit hex values EEEE + C00C is:
 ```
 EEEE + C00C = 0xAFC0 = 110330
-overflow 
-the maximum representable value is 65536
-65536 = 0x10000
+the maximum representable value is 65535
+65535 = 0xFFFF
 ```
 
-7. The 16-bit operation 9EEE + AB0C has a carry (Y or N):
+8. The 16-bit operation 9EEE + AB0C has a carry (Y or N):
 ```
                  1
 	 1001 1110 1110 1110 
@@ -271,7 +267,7 @@ ________________________
 
 ```
 
-8. The 16-bit operation 9EEE + AB0C has a overflows (Y or N):
+9. The 16-bit operation 9EEE + AB0C has a overflows (Y or N):
 ```
 	 1001 1110 1110 1110 
 + 1010 1011 0000 1100
@@ -282,7 +278,7 @@ ________________________
 
 ```
 
-9. The negation of 16-bit word 0xB00F is:
+10. The negation of 16-bit word 0xB00F is:
 ```
 	= B00F
 	= 1011 0000 0000 1111
@@ -291,7 +287,7 @@ ________________________
 
 ```
 
-10. The negation of 16-bit word 0x2232 is:
+11. The negation of 16-bit word 0x2232 is:
 ```
 	= 2232
 	= 0010 0010 0011 0010
@@ -300,7 +296,7 @@ ________________________
 
 ```
 
-11. The negation of 16-bit word 0x8000 is:
+12. The negation of 16-bit word 0x8000 is:
 ```
 	= 1000 0000 0000 0000
 	= 0111 1111 1111 1111
@@ -308,7 +304,7 @@ ________________________
 
 ```
 
-12. The negation of 32-bit word 0xFFF329BA is:
+13. The negation of 32-bit word 0xFFF329BA is:
 ```
 = FFF329BA
 = 1111 1111 1111 0011 0010 1001 1011 1010
@@ -319,7 +315,7 @@ __________________________________________
 
 ```
 
-13. 96.03125 as a 32-bit float, in hex is:
+14. 96.03125 as a 32-bit float, in hex is:
 ```
       96                    0.3125
     /    \                  /    \
@@ -331,7 +327,7 @@ __________________________________________
 
 ```
 
-14. -16777216 as a 32-bit float, in hex is:
+15. -16777216 as a 32-bit float, in hex is:
 ```
                         16777216
                          /    \
@@ -349,25 +345,25 @@ __________________________________________
 = 0x-1000000
 ```
 
-15. Hex 43700000, when interpreted as an IEEE-754 pattern, is in decimal:
+16. Hex 43700000, when interpreted as an IEEE-754 pattern, is in decimal:
 ```
 = 0100 0011 0111 0000 0000 0000 0000 0000
 S: 0 (positive)
 E: 1000 0110 -> 134 - 127 = 7
 F: 11100000000000000000000 -> 1.111
-= 1.111 * 2^7
-= 142.208
+= 1.111 * 2^7 = 11110000
+= 240
 
 ```
 
-16. Hex C0FF0000, when interpreted as an IEEE-754 pattern, is in decimal:
+17. Hex C0FF0000, when interpreted as an IEEE-754 pattern, is in decimal:
 ```
 = 1100 0000 1111 1111 0000 0000 0000 0000
 S: 1 (negative)
 E: 1000 0001 -> 129 - 127 = 2
 F: 11111110000000000000000 -> 1.1111111
-= 1.1111111 * 2^2
-= 4.4444444
+= 1.1111111 * 2^2 = 111.11111
+= 7.96875
 
 ```
 
@@ -377,95 +373,73 @@ F: 11111110000000000000000 -> 1.1111111
 2. The largest finite IEEE-754 single precision float, in hex is:
 ```
 S: 0 (positive)
-E: 11111111 (max bits)
-F: 00000000000000000000000
+E: 11111111 (max bits before reaching infinity or NaN)
+F: 11111111111111111111111
 
-0111 1111 1000 0000 0000 0000 0000 0000
+0111 1111 1111 1111 1111 1111 1111 1111
 
-0x7F800000
+0x7FFFFFFF
 ```
 
 3. The smallest finite IEEE-754 single precision float, in hex is:
 ```
 S: 0 (positive)
-E: 00000001 (max bits)
-F: 00000000000000000000000
+E: 00000000 (max bits)
+F: 00000000000000000000001
 
-0000 0000 1000 0000 0000 0000 0000 0000
+0000 0000 0000 0000 0000 0000 0000 0001
 
-0x00800000
+0x00000001
 ```
 
 4. The largest nonzero negative IEEE-754 single precision float, in hex is:
 ```
 S: 1 (negative)
 E: 11111111 (max bits)
-F: 00000000000000000000000
+F: 00000000000000000000001
 
-1111 1111 1000 0000 0000 0000 0000 0000
+1000 0000 0000 0000 0000 0000 0000 0001
 
-0xFF800000
+0x80000001
 ```
 
-5. The smallest nonezero positive IEEE-754 single precision float, in hex is:
+5. The smallest nonzero positive IEEE-754 single precision float, in hex is:
 ```
 S: 0 (positive)
-E: 00000001 (max bits)
-F: 00000000000000000000000
+E: 00000000
+F: 00000000000000000000001
 
-0000 0000 1000 0000 0000 0000 0000 0000
+0000 0000 0000 0000 0000 0000 0000 0001
 
-0x00800000
+0x00000001
 
 ```
 
 6. -5.125 X 2^90 as a 32-bit float, in hex is:
 ```
 = -5.125 * 2^(90)
-S: 1 (negative)
-E: 90 - 127 = -37
-   -37 = 100101 =  00100101       -> 	  11011010
-                                     		+1
-	  			      ____________
-	 			    	1101 1011
-F: 5.125 -> 5.125 - 5.0 = .125 -> 1111101
-= S + E + F = 1 + 1101 1011 + 1111101
-= 1110 1101 1111 1101 0000 0000 0000 0000 
-= 0xEDFD
+= -6.3444427 * 10^(27)
+= -6.344442700000000000000000000
+= 0xc0cb05ad
 
 ```
 
 7. 2^(-138) as a 32-bit float, in hex is:
 ```
 = 1.0 * 2^(-138)
-S: 0 (positive)
-E: -138 + 127 = -11
-   -11 = 1011 = 0000 1011 -> 1111 0100
-                                     +1
-                            ____________
-                             1111 0101
-F: 1.0 -> 1 + 1.0 = 0.0 -> 0
-= S + E + F = 0 + 1111 0101 + 0
-= 0111 1010 1000 0000 0000 0000 0000 0000
-= 0x7A8
+= 2.86985925 * 10^(-42)
+= .00000000000000000000000000000000000000000286985925
+max input length exceeded
+= 0x40cb05ad
 
 ```
 
 8. 1.5 X 2^(-143) as a 32-bit float, in hex is:
 ```
 = 1.5 * 2^(-142)
-S: 0 (positive)
-E: -143 + 127 = -16
-   -16 = 10000 = 0001 0000 -> 1110 1111
-                                     +1
-                            ____________
-                             1111 0000
-F: 1.5 -> 1.5 - 1.0 = 0.5 -> 101
-= S + E + F = 0 + 1111 0000 + 101
-= 0111 1000 0101 0000 0000 0000 0000 0000
-= 0x785
+= 1.34524653 * 10^(-43)
+= .000000000000000000000000000000000000000000134524653
+max input length exceeded
+= 0x40cb05ad
 
 ```
-
-
-
