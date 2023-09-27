@@ -214,13 +214,13 @@ ignore the carry
 overflow 
 the maximum representable value is 65535
 
-                 65535
+			65535
 		        /    \ 
 		     4095     15
 		    /    \
 		  255     15
 		 /    \
-	    15     15
+	       15     15
 	
 65535 = 0xFFFF
 ```
@@ -233,25 +233,24 @@ Yes, because the hex value 1 carries over 1 extra hex digit
 
 5. The 16-bit operation 0x6159 + 0xF702 has a overflows (Y or N):
 ```
-No, answer is in hex and decimal.
- becuase 0x6159 is positive as a signed decimal and 0xF702 is negatiive as a signed integer.
+No, because 0x6159 is positive as a signed decimal and 0xF702 is negative as a signed decimal.
 
 ```
 
 6. The modular sum of 16-bit hex values EEEE + C00C is:
 ```
 EEEE = 1110 1110 1110 1110
-C00C = 1100 0000 1100 1100
-	       ________________+
-       1010 1111 1011 1010
+C00C = 1100 0000 0000 1100
+	________________+
+       1010 1110 1111 1010
 
 ignore the carry
-EEEE + C00C = 0xAFBA
+EEEE + C00C = 0xAEFA
 ```
 
 7. The saturated sum of 16-bit hex values EEEE + C00C is:
 ```
-EEEE + C00C = 0xAFC0 = 110330
+EEEE + C00C = 0x1AEFA = 110330
 the maximum representable value is 65535
 65535 = 0xFFFF
 ```
@@ -373,23 +372,23 @@ F: 11111110000000000000000 -> 1.1111111
 2. The largest finite IEEE-754 single precision float, in hex is:
 ```
 S: 0 (positive)
-E: 11111111 (max bits before reaching infinity or NaN)
-F: 11111111111111111111111
+E: 11111110 (max bits before reaching infinity or NaN)
+F: 11111111111111111111111 (max bits)
 
-0111 1111 1111 1111 1111 1111 1111 1111
+0111 1111 0111 1111 1111 1111 1111 1111
 
-0x7FFFFFFF
+0x7F7FFFFF
 ```
 
 3. The smallest finite IEEE-754 single precision float, in hex is:
 ```
-S: 0 (positive)
-E: 00000000 (max bits)
-F: 00000000000000000000001
+S: 1 (negative)
+E: 11111110 (max bits before reaching infinity or NaN)
+F: 11111111111111111111111
 
-0000 0000 0000 0000 0000 0000 0000 0001
+1111 1111 0111 1111 1111 1111 1111 1111
 
-0x00000001
+0xFF7FFFFF
 ```
 
 4. The largest nonzero negative IEEE-754 single precision float, in hex is:
