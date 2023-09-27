@@ -153,8 +153,8 @@ _______________+1
 
 17. If we had 20-bit registers, the smallest signed decimal integer value would be:
 ```
-= -1 * (2^18 + 2^17 + 2^16 + 2^15 + 2^14 + 2^13 + 2^12 + 2^11 + 2^10 + 2^9 + 2^8 + 2^7 + 2^6 + 2^5 + 2^4 + 2^3 + 2^2 + 2^1 + 0)
-= -524286
+= -1 * (2^18 + 2^17 + 2^16 + 2^15 + 2^14 + 2^13 + 2^12 + 2^11 + 2^10 + 2^9 + 2^8 + 2^7 + 2^6 + 2^5 + 2^4 + 2^3 + 2^2 + 2^1 + 2^0) - 1
+= -524288
 ```
 
 18. If we had 20-bit registers, the largest signed decimal integer value would be:
@@ -394,7 +394,7 @@ F: 11111111111111111111111
 4. The largest nonzero negative IEEE-754 single precision float, in hex is:
 ```
 S: 1 (negative)
-E: 11111111 (max bits)
+E: 00000000 (non-normalized exponent)
 F: 00000000000000000000001
 
 1000 0000 0000 0000 0000 0000 0000 0001
@@ -417,28 +417,26 @@ F: 00000000000000000000001
 6. -5.125 X 2^90 as a 32-bit float, in hex is:
 ```
 = -5.125 * 2^(90)
-= -6.3444427 * 10^(27)
-= -6.344442700000000000000000000
-= 0xc0cb05ad
+= -6.3444427e+27
+= 0xEDA40000
 
+Calculator:  https://www.h-schmidt.net/FloatConverter/IEEE754.html
 ```
 
 7. 2^(-138) as a 32-bit float, in hex is:
 ```
 = 1.0 * 2^(-138)
-= 2.86985925 * 10^(-42)
-= .00000000000000000000000000000000000000000286985925
-max input length exceeded
-= 0x40cb05ad
+= 2.8698593e-42
+= 0x00000800
 
+Calculator:  https://www.h-schmidt.net/FloatConverter/IEEE754.html
 ```
 
 8. 1.5 X 2^(-143) as a 32-bit float, in hex is:
 ```
-= 1.5 * 2^(-142)
-= 1.34524653 * 10^(-43)
-= .000000000000000000000000000000000000000000134524653
-max input length exceeded
-= 0x40cb05ad
+= 1.5 * 2^(-143)
+= 1.3452465e-43
+= 0x00000060
 
+Calculator:  https://www.h-schmidt.net/FloatConverter/IEEE754.html
 ```
