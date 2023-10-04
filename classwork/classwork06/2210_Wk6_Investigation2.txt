@@ -1,0 +1,29 @@
+Investigation #2:  Write a program for this computer to output Hello, world to port 888, assuming UTF-32 encoding.
+Language:  Stanley/Penguin
+
+	JMP 0x00000010
+
+	H: 0x00000048
+	e: 0x00000101
+	l: 0x00000108
+	o: 0x00000111
+	w: 0x00000119
+	r: 0x00000108
+	d: 0x00000100
+	comma: 0x00000044
+	space: 0x00000032
+	port: 0x00000888
+
+start:	LOAD H
+	ADD e
+	ADD l
+	ADD l
+	ADD o
+	ADD comma
+	ADD space
+	ADD w
+	ADD o
+	ADD r
+	ADD l
+	ADD d
+	STORE [port]
