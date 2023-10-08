@@ -12,34 +12,34 @@ Problems "C-level"
    Question 03      1/1 pt.
    Question 04      1/1 pt.
    Question 05      1/1 pt.
-   Question 06      0/1 pt.   nope!
+   Question 06      0/1 pt.   Corrected
    Question 07      1/1 pt.
    Question 08      1/1 pt.
    Question 09      1/1 pt.
    Question 10      1/1 pt.
-   Question 11      0/1 pt.   nope!
+   Question 11      0/1 pt.   Corrected
    Question 12      1/1 pt.
    Question 13      1/1 pt.
    Question 14      1/1 pt.
    Question 15      1/1 pt.
    Question 16      1/1 pt.
-   Question 17      0/1 pt.   nope!
+   Question 17      0/1 pt.   Corrected
    Question 18      1/1 pt.
    Question 19      1/1 pt.
    Question 20      1/1 pt.
-   Question 21      0/1 pt.   nope!
-   Question 22      0/1 pt.   nope!
+   Question 21      0/1 pt.   Corrected
+   Question 22      0/1 pt.   Corrected
 
 
 Problems "B-level"
 =================
 [renumber so only the actual questions are numbered]
    Question  01     1/1 pt.
-   Question  02     0/1 pt.   nope!
+   Question  02     0/1 pt.   Corrected
    Question  03     1/1 pt.
-   Question  04     0/1 pt.   nope!
-   Question  05     0/1 pt.   nope!
-   Question  06     0/1 pt.   nope!
+   Question  04     0/1 pt.   Corrected
+   Question  05     0/1 pt.   Corrected
+   Question  06     0/1 pt.   Corrected
    Question  07     1/1 pt.
    Question  08     1/1 pt.
    Question  09     1/1 pt.
@@ -48,20 +48,20 @@ Problems "B-level"
    Question  12     1/1 pt.
    Question  13     1/1 pt.
    Question  14     1/1 pt.
-   Question  15     0/1 pt.   nope!
+   Question  15     0/1 pt.   Corrected
    Question  16     0/1 pt.   nope!
 
 
 Problems "A-level"
 =================
 [renumber so only the actual questions are numbered]
-   Question  01     0/1 pt.   nope!
-   Question  02     0/1 pt.   nope!
-   Question  03     0/1 pt.   nope!
-   Question  04     0/1 pt.   nope!
-   Question  05     0/1 pt.   nope!
-   Question  06     0/1 pt.   nope!
-   Question  07     0/1 pt.   nope!
+   Question  01     0/1 pt.   Corrected
+   Question  02     0/1 pt.   Corrected
+   Question  03     0/1 pt.   Corrected
+   Question  04     0/1 pt.   Corrected
+   Question  05     0/1 pt.   Corrected
+   Question  06     0/1 pt.   Corrected
+   Question  07     0/1 pt.   Corrected
    Question  08   for fun only!
 
 Total possible points 45
@@ -135,4 +135,24 @@ for the assignment.
 Make your corrections and re-submit to your repo by Thursday, September 28th.
 You'll get full credit for the highest section's value that has 100% correct
 answers.
+
+========================================================
+SECOND PASS OUTCOME:
+
+All corrected in "C" level.
+
+Still one error in "B" level:
+17: should be negative, not positive.  D'oh!
+
+All corrected in "A" level.  Since the highest level is now correct, you earn an
+"A" for the assignment.
+
+========================================================
+FINAL PASS OUTCOME:
+
+Combining all levels into one assignment.
+
+Total of 45 problems.
+
+You earned 44/45 which is 97.78% which is an A-plus.
 
