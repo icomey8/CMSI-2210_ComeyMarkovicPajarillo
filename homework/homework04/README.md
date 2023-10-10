@@ -1,6 +1,6 @@
 ## Assignment #4:
 
-1. Condsider the function with three inputs ```(A, B, C)``` adn two outputs ```(X, Y)``` that works like this:
+1. Condsider the function with three inputs ```(A, B, C)``` and two outputs ```(X, Y)``` that works like this:
 
           A  B  C | X  Y
          ---------+------
@@ -12,10 +12,13 @@
           1  0  1 | 1  1
           1  1  0 | 1  0
           1  1  1 | 1  1
-Design two logic circuits for this function, one using AND, OR and NOT gates only, and one using NAND gates only. You DO NOT HAVE to draw the circuit, but it might be helpful to do that to visualize and trace the logic. However, for this question you are only required to write the two formulas — one for computing ```X``` and one for computing ```Y```. They can take the form of a logical equation such as
+Design two logic circuits for this function, one using AND, OR and NOT gates only, and one using NAND gates only. You DO NOT HAVE to draw the circuit, but it might be helpful to do that to visualize and trace the logic. However, for this question you are only required to write the two formulas — one for computing ```X``` and one for computing ```Y```. They can take the form of a logical equation such as  ```X := A and B or such as Y := not-B and (A or C).```
+```
+X := A or (B and C)
+Y := not-A and not-(B and C)
+```
 
-          ```X := A and B or such as Y := not-B and (A or C).```
-Draw a logic circuit that compares two 2-bit signed numbers as follows. It should have four inputs a1, a0, b1, and b0. a1a0 is a 2-bit signed number (call it a) and b1b0 is a 2-bit signed number (call it b). The circuit has one output, c, which is 1 if a > b and 0 otherwise.
+2. Draw a logic circuit that compares two 2-bit signed numbers as follows. It should have four inputs a1, a0, b1, and b0. a1a0 is a 2-bit signed number (call it a) and b1b0 is a 2-bit signed number (call it b). The circuit has one output, c, which is 1 if a > b and 0 otherwise.
 ```
 
 ```
@@ -33,6 +36,14 @@ Draw a logic circuit that compares two 2-bit signed numbers as follows. It shoul
  
 4. For the sample single-accumulator computer discussed in class, write a complete assembly language program in the ```stanley/penguin``` language that sends the values ```0``` through ```255``` out to port ```0x8```. NOTE: the machine code for this will be written in the next problem.
 ```
+*** IN PROGRESS***
+value:  0x00000000
+limit:  0x000000FF
+port:   0x80000000
+
+start:    LOAD value
+          ADD 0x00000001
+
 
 ```
 
