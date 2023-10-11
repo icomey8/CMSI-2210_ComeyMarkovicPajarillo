@@ -37,11 +37,12 @@ Y := not-A and not-(B and C)
 4. For the sample single-accumulator computer discussed in class, write a complete assembly language program in the ```stanley/penguin``` language that sends the values ```0``` through ```255``` out to port ```0x8```. NOTE: the machine code for this will be written in the next problem.
 ```
         JMP     start    ; begin by jumping over the data area
-value:  0                ; store the current power value here
+value:  0                ; store (starting) value
 limit:  255              ; we'll be computing powers up to this amount
+one:    1                ; store value
 start:  LOAD    value    ; bring the value into accumulator to use
         WRITE   8        ; output the current power
-        ADD     1        ; add 1 to the vlue
+        ADD     one      ; add 1 to the vlue
         STORE   value    ; store it (for next time)
         SUB     limit    ; we need to compare with limit, subtracting helps
         JLZ     start    ; if not yet past limit, keep going
@@ -53,13 +54,14 @@ end:    JUMP    end      ; this "stops" the program!
    C0000003           JMP     start    ; begin by jumping over the data area
    00000000   value:  0                ; store the current power value here
    000000FF   limit:  255              ; we'll be computing powers up to this amount
+   00000001   one:    1                ; store value
    00000000   start:  LOAD    value    ; bring the value into accumulator to use
    30000008           WRITE   8        ; output the current power
-   40000001           ADD     1        ; add 1 to the value
+   40000001           ADD     one      ; add 1 to the value
    10000001           STORE   value    ; store it (for next time)
    50000002           SUB     limit    ; we need to compare with limit, subtracting helps
    E0000003           JLZ     start    ; if not yet past limit, keep going
-   C0000009   end:    JUMP    end      ; this "stops" the program!
+   C000000A   end:    JUMP    end      ; this "stops" the program!
 ```
 
 6. For the sample single-accumulator computer discussed in class, write a complete assembly language program in the ```stanley/penguin``` language that computes a greatest common divisor. Assume the two inputs are read in from port ```0x100```. Write the result to port ```0x200```. You do not need to write machine code for this problem.
