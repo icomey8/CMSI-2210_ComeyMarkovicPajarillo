@@ -1,6 +1,6 @@
 ## Assignment #4:
 
-1. Condsider the function with three inputs ```(A, B, C)``` and two outputs ```(X, Y)``` that works like this:
+1. Consider the function with three inputs ```(A, B, C)``` and two outputs ```(X, Y)``` that works like this:
 
           A  B  C | X  Y
          ---------+------
