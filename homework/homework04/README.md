@@ -24,6 +24,7 @@ Y := not-A and not-(B and C)
 ```
 
 3. Given a 32-bit register, write logic instructions to perform the following operations. For parts (c) and (f) assume an unsigned interpretation; for part (d) assume a signed interpretation.
+
           a.) Clear all even numbered bits.
           b.) Set the last three bits.
           c.) Compute the remainder when divided by 8.
