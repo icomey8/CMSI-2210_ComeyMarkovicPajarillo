@@ -73,6 +73,13 @@ end:    JUMP    end      ; this "stops" the program!
 7. For the sample single-accumulator computer discussed in class, give a code fragment, in assembly language of the ```stanley/penguin``` language, that swaps the accumulator and memory address ```0x30AA```. You do not need to write machine code for this problem.
 ```
 
+   00000001          STORE   value   : store the accumulator value in a temporary address
+   000030AA          LOAD    value   : load the value from 0x30AA
+   00000000          STORE   value   : store the value in the accumulator 
+   00000001          LOAD    value   : load the accumulator value from temporary address
+   000030AA          STORE   value   : store the accumulator in address 0x30AA
+   
+
 ```
 
 8. For the sample single-accumulator computer discussed in class, give a code fragment, in assembly language of the ```stanley/penguin``` language that has the effect of jumping to the code at address ```0x837BBE1``` if the value in the accumulator is greater than or equal to ```0```. You do not need to write machine code for this problem.
