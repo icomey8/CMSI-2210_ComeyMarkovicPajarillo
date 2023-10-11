@@ -20,7 +20,9 @@ Y := not-A and not-(B and C)
 
 2. Draw a logic circuit that compares two 2-bit signed numbers as follows. It should have four inputs a1, a0, b1, and b0. a1a0 is a 2-bit signed number (call it a) and b1b0 is a 2-bit signed number (call it b). The circuit has one output, c, which is 1 if a > b and 0 otherwise.
 ```
+Possible Resource:  https://epgp.inflibnet.ac.in/epgpdata/uploads/epgp_content/S000574EE/P001494/M015069/ET/1459849153et09.pdf
 
+Possible Resource:  https://www.geeksforgeeks.org/magnitude-comparator-in-digital-logic/amp/
 ```
 
 3. Given a 32-bit register, write logic instructions to perform the following operations. For parts (c) and (f) assume an unsigned interpretation; for part (d) assume a signed interpretation.
