@@ -86,7 +86,8 @@ end:    JUMP    end      ; this "stops" the program!
 
 8. For the sample single-accumulator computer discussed in class, give a code fragment, in assembly language of the ```stanley/penguin``` language that has the effect of jumping to the code at address ```0x837BBE1``` if the value in the accumulator is greater than or equal to ```0```. You do not need to write machine code for this problem.
 ```
-
+   C0837BE1           JZ   : jumps to 0x837BBE1 if accumulator is zero
+   C0837BE1           JLZ  : jumps to 0x837BBE1 if accumulator is greater than zero
 ```
 
 9. **Part 1 of 2:** Explain, at a high-level, what the following sequence of instructions does. In other words, suppose a programmer has stored data in r8 and r9. After executing these instructions, what does the programmer notice about the data?
@@ -94,9 +95,16 @@ end:    JUMP    end      ; this "stops" the program!
           xor r8, r9
           xor r9, r8
           xor r8, r9
+```
+After the first instruction, r8 contains the bitwise xor of the values in r8 and r9
+After the second instruction, the original value of r8 is stored in r9 since r9 xor'ed with r8
+After the third instruction, the original value of r9 is stored in r8 since r8 xor'ed with r9
+
+The values of r8 and r9 are swapped
+```
 
    **Part 2 of 2:** Also state as briefly as possible why that effect happens.
 ```
-
+XORing a value A and value B twice will result in value A
 ```
 
