@@ -41,11 +41,12 @@ Possible Resource:  https://www.geeksforgeeks.org/magnitude-comparator-in-digita
 ```
         JMP     start    ; begin by jumping over the data area
 value:  0                ; store (starting) value
-limit:  255              ; we'll be computing powers up to this amount
+limit:  255              ; we'll be computing values up to this amount
 one:    1                ; store value
+port:   8                ; store port
 start:  LOAD    value    ; bring the value into accumulator to use
-        WRITE   8        ; output the current power
-        ADD     one      ; add 1 to the vlue
+        WRITE   port     ; output the current value to port
+        ADD     one      ; add 1 to the value
         STORE   value    ; store it (for next time)
         SUB     limit    ; we need to compare with limit, subtracting helps
         JLZ     start    ; if not yet past limit, keep going
@@ -54,17 +55,18 @@ end:    JUMP    end      ; this "stops" the program!
 
 5. Translate your assembly language program in the previous problem to machine language.
 ```
-   C0000003           JMP     start    ; begin by jumping over the data area
-   00000000   value:  0                ; store the current power value here
+   C0000005           JMP     start    ; begin by jumping over the data area
+   00000000   value:  0                ; store (starting) value
    000000FF   limit:  255              ; we'll be computing powers up to this amount
    00000001   one:    1                ; store value
+   80000000   port:   8                ; store port
    00000000   start:  LOAD    value    ; bring the value into accumulator to use
-   30000008           WRITE   8        ; output the current power
+   30000008           WRITE   port     ; output the current value to port
    40000001           ADD     one      ; add 1 to the value
    10000001           STORE   value    ; store it (for next time)
    50000002           SUB     limit    ; we need to compare with limit, subtracting helps
    E0000003           JLZ     start    ; if not yet past limit, keep going
-   C000000A   end:    JUMP    end      ; this "stops" the program!
+   C000000B   end:    JUMP    end      ; this "stops" the program!
 ```
 
 6. For the sample single-accumulator computer discussed in class, write a complete assembly language program in the ```stanley/penguin``` language that computes a greatest common divisor. Assume the two inputs are read in from port ```0x100```. Write the result to port ```0x200```. You do not need to write machine code for this problem.
