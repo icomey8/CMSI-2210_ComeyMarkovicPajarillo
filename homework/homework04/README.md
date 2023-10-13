@@ -102,22 +102,22 @@ start:  LOAD    accum   : load the value from accumulator
           xor r9, r8
           xor r8, r9
 ```
-step-by-step example:  r8 | r9  --first-instruction-->  r8 | r9  --second-instruction-->  r8 | r9  --third-instruction-->  r8 | r9
-                        1 | 1                            0 | 1                             0 | 1                            1 | 1
-                        1 | 0                            1 | 0                             1 | 1                            0 | 1
-                        0 | 1                            1 | 1                             1 | 0                            1 | 0
-                        0 | 0                            0 | 0                             0 | 0                            0 | 0
+step-by-step:  r8 | r9  --first-instruction-->  r8 | r9  --second-instruction-->  r8 | r9  --third-instruction-->  r8 | r9
+                1 | 1                            0 | 1                             0 | 1                            1 | 1
+                1 | 0                            1 | 0                             1 | 1                            0 | 1
+                0 | 1                            1 | 1                             1 | 0                            1 | 0
+                0 | 0                            0 | 0                             0 | 0                            0 | 0
 
 
-After the first instruction, r8 contains the bitwise xor of the values in r8 and r9
-After the second instruction, the original value of r8 is stored in r9 since r9 xor'ed with r8
-After the third instruction, the original value of r9 is stored in r8 since r8 xor'ed with r9
+After the first instruction, r8 contains the bitwise xor of the values in r8 and r9.
+After the second instruction, the original value of r8 is stored in r9 since r9 xor'ed with r8.
+After the third instruction, the original value of r9 is stored in r8 since r8 xor'ed with r9.
 
-The values of r8 and r9 are swapped
+The values of r8 and r9 are swapped.
 ```
 
    **Part 2 of 2:** Also state as briefly as possible why that effect happens.
 ```
-XORing a value A and value B twice will result in value A
+XORing a value A and value B twice will result in value A.
 ```
 
