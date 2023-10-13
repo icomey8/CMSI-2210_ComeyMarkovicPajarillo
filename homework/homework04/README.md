@@ -85,8 +85,6 @@ start:  LOAD    accum   : load the value from accumulator
         STORE   accum   : store the value in the accumulator 
         LOAD    temp    : load the accumulator value from temporary address
         STORE   mem     : store the accumulator in address 0x30AA
-   
-
 ```
 
 8. For the sample single-accumulator computer discussed in class, give a code fragment, in assembly language of the ```stanley/penguin``` language that has the effect of jumping to the code at address ```0x837BBE1``` if the value in the accumulator is greater than or equal to ```0```. You do not need to write machine code for this problem.
