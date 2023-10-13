@@ -76,12 +76,16 @@ end:    JUMP    end      ; this "stops" the program!
 
 7. For the sample single-accumulator computer discussed in class, give a code fragment, in assembly language of the ```stanley/penguin``` language, that swaps the accumulator and memory address ```0x30AA```. You do not need to write machine code for this problem.
 ```
-
-   00000001          STORE   value   : store the accumulator value in a temporary address
-   000030AA          LOAD    value   : load the value from 0x30AA
-   00000000          STORE   value   : store the value in the accumulator 
-   00000001          LOAD    value   : load the accumulator value from temporary address
-   000030AA          STORE   value   : store the accumulator in address 0x30AA
+        JMP     start   : begin by jumping over the data area
+mem:    30AA
+temp:   1
+accum:  0
+start:  LOAD    accum   : load the value from accumulator
+        STORE   temp    : store the accumulator value in a temporary address
+        LOAD    mem     : load the value from 0x30AA
+        STORE   accum   : store the value in the accumulator 
+        LOAD    temp    : load the accumulator value from temporary address
+        STORE   mem     : store the accumulator in address 0x30AA
    
 
 ```
@@ -98,6 +102,13 @@ end:    JUMP    end      ; this "stops" the program!
           xor r9, r8
           xor r8, r9
 ```
+step-by-step example:  r8 | r9  --first-instruction-->  r8 | r9  --second-instruction-->  r8 | r9  --third-instruction-->  r8 | r9
+                        1 | 1                            0 | 1                             0 | 1                            1 | 1
+                        1 | 0                            1 | 0                             1 | 1                            0 | 1
+                        0 | 1                            1 | 1                             1 | 0                            1 | 0
+                        0 | 0                            0 | 0                             0 | 0                            0 | 0
+
+
 After the first instruction, r8 contains the bitwise xor of the values in r8 and r9
 After the second instruction, the original value of r8 is stored in r9 since r9 xor'ed with r8
 After the third instruction, the original value of r9 is stored in r8 since r8 xor'ed with r9
