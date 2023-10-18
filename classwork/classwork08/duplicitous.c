@@ -119,6 +119,7 @@ int main( int argc, char * argv[] ) {
    *  write them to the output file
    */
   for (int repeat_count = 0; repeat_count <= copyCount; repeat_count++) {
+    fseek(input_open, 0, 1);
     for (int counter = 0; counter <= first_line; counter++) {
         char line_to_print[1000];
         fgets(line_to_print, 1000, input_open);
