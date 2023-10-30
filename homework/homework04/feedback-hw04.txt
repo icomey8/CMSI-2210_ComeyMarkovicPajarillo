@@ -1,0 +1,74 @@
+
+
+Evaluation Criteria ~ homework04
+CMSI 2210 Section 02 Fall 2023
+=================================
+
+LOGIC DESIGN
+   Logic Question 1a         10 pts.
+   Logic Question 1b          0 pts.
+   Logic Question 2          10 pts.
+
+REGISTER OPERATIONS
+   Register clear even        0 pts.
+   Register set last 3        0 pts.
+   Reg./8 remainder           0 pts.
+   Reg. set to -1             0 pts.
+   Reg. invert 2 MSBs         0 pts.
+   Register computation       0 pts.
+
+STANLEY/PENGUIN ASSEMBLY
+   Q4 - program 1a           11 pts.
+   Q5 - program 1b           11 pts.
+   Q6 - GCD prog.             0 pts.
+   Q7 - swap frag             4 pts.
+   Q8 - jmp to addr           5 pts.
+
+REGISTER INVESTIGATION
+   Q9a - high level expl.     5 pts.
+   Q9b - Why?                 5 pts.
+
+
+Total possible points        90 points
+
+========================================================
+
+TOTAL EARNED POINTS:
+   you earned 61.0/ 90.0 which is 67.78% which is not the best...
+
+I'm sure if you had completed all the problems your score would have
+been higher!
+
+========================================================
+SPECIFIC COMMENTS/FEEDBACK:
+
+On #1, you only have two equations; there should be four ~ two using the
+   AND/OR/NOT gates, and two more using only NAND gates.
+
+On #2, this should work, I think....
+
+On #3, you don't have any solutions ~ they should all have the form of:
+   a) AND 0xAAAAAAAA
+   b)  OR 0x00000007
+   ...and so forth
+
+On #4, you got the gist of it, and on #5 you've translated correctly.
+
+On #6, again I don't see any solutions for the GCD problem.
+
+On #7, remember that you have to load and store everything through the
+   accumulator; you have the right idea, just not implemented quite right.
+
+You're doing fine, don't get discouraged!
+
+========================================================
+SEMESTER SCORE SO FAR:
+
+   homework01 ~ 100.00% of  5 points =  5.00 points
+   homework02 ~ 100.00% of  5 points =  5.00 points
+   homework03 ~  97.78.00% of  5 points =  5.00 points
+   homework04 ~  97.78% of  5 points =  5.00 points
+                                total: 20.00 out of 20.0 = 100.00%
+                                which is an A-plus
+
+Keep up the good work!
