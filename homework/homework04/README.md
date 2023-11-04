@@ -32,7 +32,14 @@ File:  HW04_Problem2.pdf
           d.) Make the value -1
           e.) Complement the two highest order bits
           f.) Compute the largest multiple of 8 less than or equal to the value itself
+
 ```
+a) change bits to zero -> AND 0xAAAAAAAA
+b) if 0 then change to 1, if 1 leave unchanges -> OR 0xE0000000
+c) signed, so -> OR 0xFFFFFFFF
+d) -> AND 0xFFFFFFF8
+e) flip two highest order bits -> XOR 0xC0000000
+f) -> AND 0x00000007
 
 ```
  
