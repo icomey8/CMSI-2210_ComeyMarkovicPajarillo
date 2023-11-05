@@ -78,6 +78,34 @@ end:    JUMP    end      : this "stops" the program!
 6. For the sample single-accumulator computer discussed in class, write a complete assembly language program in the ```stanley/penguin``` language that computes a greatest common divisor. Assume the two inputs are read in from port ```0x100```. Write the result to port ```0x200```. You do not need to write machine code for this problem.
 ```
 
+          JMP          start  	: begin by jumping over the data area
+value:     0               		: store (starting) value	
+limit: 	 0		 	: starting limit value until later changes
+big:       0 		    	: first input
+small: 	 0		    	: second input
+temp: 	 0 			: temp
+port1:    100                           : starting port
+port2:    200                          	: output port
+start:    READ          port1		: get big value
+          STORE         big		: store value in “big”
+          READ          port1		: get small value 
+          STORE         small		: store value in “small”
+          STORE         temp		: store small value in “temp” also
+
+          coco			: jump location
+          LOAD          big		: load big value into accumulator
+          MOD           temp		: take MOD of “big” and “temp”
+          STORE         small		: store results of “MOD temp” in “small”
+          LOAD          temp		: load “temp” into accumulator
+          STORE         big		: store temp value in “big”
+          LOAD          small		: load “small”, now the result of the MOD call
+          JZ            coco		: repeat while “small”, the MOD value, is not 0
+
+          LOAD          big		: load “big”, which represents GCD b/c MOD = 0
+          WRITE         port		: write our result, in “big”, to the output port 200
+end:	JUMP          end		: stop the program
+
+
 ```
 
 7. For the sample single-accumulator computer discussed in class, give a code fragment, in assembly language of the ```stanley/penguin``` language, that swaps the accumulator and memory address ```0x30AA```. You do not need to write machine code for this problem.
