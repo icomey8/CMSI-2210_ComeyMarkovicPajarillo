@@ -1,7 +1,7 @@
 
 
 Evaluation Criteria ~ homework05
-CMSI 2210 Section 01 Fall 2021
+CMSI 2210 Section 02 Fall 2021
 =================================
 
 dec2bin
@@ -30,22 +30,27 @@ wordcount
 ========================================================
 
 TOTAL EARNED POINTS:
-   you earned 96/100 which is 96.00% which is an A-plus
+   you earned 96/100 which is 96.00% which is a solid A
 
 ========================================================
 SPECIFIC COMMENTS/FEEDBACK:
 
+Everything looks good except dec2hex which doesn't switch properly between
+   32-bit and 64-bit output values.
 
+I compiled and ran holdit on my Linux Ubuntu installation and it seems to
+   work just fine.  Good work on that one!
 
 ========================================================
 SEMESTER SCORE SO FAR:
 
    homework01 ~ 100.00% of  5 points =  5.00 points
    homework02 ~ 100.00% of  5 points =  5.00 points
-   homework03 ~ 100.00% of  5 points =  5.00 points
-   homework04 ~ 100.00% of  5 points =  5.00 points
-   homework05 ~ 100.00% of 10 points = 10.00 points
-                                total: 30.00 out of 30.00 = 100.00%
-                                which is an A-plus
+   homework03 ~  97.78% of  5 points =  4.89 points
+   homework04 ~  67.78% of  5 points =  3.39 points
+   homework05 ~  96.00% of 10 points =  9.60 points
+                                total: 27.88 out of 30.00 = 92.93%
+                                which is an A-minus
 
-Your code looks VERY nice, you two obviously care about the craft....
+Your code looks VERY nice, you obviously care about the craft....
+Keep up the good work!
