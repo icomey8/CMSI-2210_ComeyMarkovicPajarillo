@@ -1,11 +1,3 @@
-/*
- * filename: gcdFinderTest.c
- * purpose: call the nasm function to find the gcd
- *
- * assemble nasm function: nasm -f win32 gcdFinder.nasm
- * compile/link program:   gcc -m32 gcdFinderTest.c gcdFinder.o -o gcdFinderTest.exe
- */
-
 #include <stdio.h>
 #include <assert.h>
 
