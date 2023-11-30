@@ -15,7 +15,7 @@ unsigned int convertToNetworkByteOrder(unsigned int num)
     return 0;
 }
 
-int main()
+extern unsigned int convertToNetworkByteOrderASM(unsigned int num)
 {
-    return 0;
+    return convertToNetworkByteOrder(num);
 }
