@@ -1,3 +1,6 @@
+; assemble:  nasm -f win32 findGCDfunc.nasm
+; link:  gcc -m32 findGCDfunc.obj -o findGCDfunc.exe
+
          global      _findGCDfunc
          section     .text
 
