@@ -1,11 +1,11 @@
-/* assemble:  nams -f win32 gcdfind.nasm
- * compile/link:  gcc -m32 gcdFinder.c gcdFinder.o -o gcdFinder.exe
+/* assemble:  nasm -f win32 findGCDfunc.nasm
+ * compile/link:  gcc -m32 gcdFinder.c findGCDfunc.o -o gcdFinder.exe
  */
     
 #include <stdio.h>
 #include <assert.h>
 
-extern int gcdfind(int x, int y);
+extern int findGCDfunc(int x, int y);
 
 int main() {
     int x = 0;
@@ -23,7 +23,7 @@ int main() {
             gcd = z;
     }
 
-    z = gcdfind(x, y);
+    z = findGCDfunc(x, y);
     assert(z == gcd);
 
     printf("\nGCD: %d", gcd);
