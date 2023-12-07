@@ -13,7 +13,6 @@ section .text
 _main:
     push rbp
     mov rbp, rsp  ; Set the base pointer to the current stack pointer
-
     lea rdi, [rel testValues]  ; Load the address of testValues into rdi
     mov rcx, 5  ; Set the number of test values, used as a counter for the loop
 
