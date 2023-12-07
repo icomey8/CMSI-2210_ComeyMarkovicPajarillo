@@ -1,3 +1,7 @@
+/* assemble:  nams -f win32 gcdfind.nasm
+ * compile/link:  gcc -m32 gcdFinder.c gcdFinder.o -o gcdFinder.exe
+ */
+    
 #include <stdio.h>
 #include <assert.h>
 
