@@ -1,5 +1,9 @@
+/* gcc -c makeNBOC.c -o makeNBOC.o
+* gcc -c makeNBOtest.c -o makeNBOtest.o
+* gcc makeNBOC.o makeNBOtest.o -o makeNBOtest */
+
 #include <stdio.h>
-#include "makeNBOC.c"
+#include "makeNBOC.h"
 
 int main()
 {
