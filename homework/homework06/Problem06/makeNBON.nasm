@@ -1,8 +1,7 @@
-/* nasm -f macho64 makeNBON.nasm -o makeNBON.o
-* gcc -c makeNBOC.c -o makeNBOC.o
-* gcc makeNBON.o makeNBOC.o -o makeNBOExecutable
-* note: I am on M1 chip
-*/
+; nasm -f macho64 makeNBON.nasm -o makeNBON.o
+; gcc -c makeNBOC.c -o makeNBOC.o
+; gcc makeNBON.o makeNBOC.o -o makeNBOExecutable
+; note: I am on M1 chip
 
 section .data
     testValues dq 0x12345678, 0x87654321, 0xAABBCCDD, 0x11223344, 0x55667788
