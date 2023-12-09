@@ -1,3 +1,9 @@
+// gcc -c whichEndIsUp.c
+// gcc whichEndIsUp.o
+// ./a.out
+// m1 chip
+
+
 #include <stdio.h>
 
 int main() {
