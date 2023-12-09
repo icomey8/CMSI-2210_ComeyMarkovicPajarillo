@@ -2,6 +2,10 @@
 //  paritygen.s
 //  assemb
 //
+// assemble: as -arch arm64 test2.s -o test2.o
+// ld test2.o -lSystem -syslibroot `xcrun -sdk macosx --show-sdk-path`  -e _main -arch arm64 -o test2
+// ./test2
+//
 //  Created by Ian Comey on 11/29/23.
 //
 
