@@ -1,0 +1,77 @@
+
+
+Evaluation Criteria ~ homework06
+CMSI 2210 Section all Fall 2023
+=================================
+
+FINDGCD.NASM
+   nasm file assembles  [5 pts.]
+   nasm runs            [5 pts.]
+   output correct       [3 pts.]
+GCDFINDER
+   nasm file assembles  [5 pts.]
+   gcdFinder.c compiles [5 pts.]
+   link both files OK   [5 pts.]
+   nasm returns value   [5 pts.]
+   output correct       [3 pts.]
+PARITYGEN
+   nasm file assembles  [0 pts.]
+   nasm runs            [0 pts.]
+   output correct       [1 pts.]
+WHICHENDISUP
+   compiles no errors   [5 pts.]
+   runs no errors       [5 pts.]
+MAKENBOC.C
+   compiles no errors   [5 pts.]
+   uses previous func.  [5 pts.]
+   tester compiles      [5 pts.]
+   tester runs          [0 pts.]
+   output correct       [1 pts.]
+MAKENBO.NASM
+   nasm file assembles  [5 pts.]
+   link all files OK    [3 pts.]
+   calls "C" function   [5 pts.]
+   output correct       [1 pts.]
+
+Total possible points 100
+
+========================================================
+
+TOTAL EARNED POINTS:
+   you earned 77.00/100.00 which is 77% which is a C-plus
+
+========================================================
+SPECIFIC COMMENTS/FEEDBACK:
+
+problem 1 findGCD.nasm: perfect.
+
+problem 2 findGCDfunc.nasm & gcdFinder.c: perfect
+
+problem 3 paritygen.nasm: doesn't assemble on either windows or mac and no
+   command was provided for building.  The code looks like it will work.
+
+problem 4 whichEndIsUp.c: perfect
+
+problem 5 makeNBOC.c & makeNBOCtest.c: this one gets a warning about an
+   implicit function definition for "htonl()".  Then it doesn't link, due
+   to that warning becoming a linker error.
+
+problem 6 makeNBOC.c & makeNBON.nasm: by putting your code in separate
+   directories, you make it more difficult to build simple programs like
+   these.  Thanks for the heads up on the M! chip!!
+
+========================================================
+SEMESTER HOMEWORK TOTALS:
+
+   homework01 ~ 100.00% of  5 points =  5.00 points
+   homework02 ~ 100.00% of  5 points =  5.00 points
+   homework03 ~  97.78% of  5 points =  4.89 points
+   homework04 ~  67.78% of  5 points =  3.39 points
+   homework05 ~  96.00% of 10 points =  9.60 points
+   homework06 ~  77.00% of 15 points = 11.55 points
+                       semester total: 39.43 out of 45.00 = 87.62%
+                             which is a B-plus
+
+Great work on this assignment.  It's been a pleasure having you in class
+this semester and I hope to see you again in future courses and in the
+Keck Lab!  Have a great break.
